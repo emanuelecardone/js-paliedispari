@@ -17,6 +17,7 @@ if(answerForUser){
 }
 
 // Funzione per capire se una parola è palindroma
+//
 // word -> parola da analizzare per capire se è palindroma
 //
 // return = vero se è palindroma, falso se non lo è
@@ -43,6 +44,5 @@ function wordIsPalindrome(word){
     } else{
         answer = false;
     }
-    console.log(answer);
     return answer;
 }
