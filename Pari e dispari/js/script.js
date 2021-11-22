@@ -23,13 +23,13 @@ if(!(userChoice === null)){
     // Chiedo poi all'utente di inserire un numero
     // I controlli sono molti, anche se inserisco una stringa invece che un numero
     let userNumber = '';
-    while(userNumber === '' || isNaN(userNumber)){
+    while(userNumber === '' || isNaN(userNumber) || userNumber < 1 || userNumber > 5){
         userNumber = prompt(`Scegli un numero da 1 a 5`);
         if(userNumber !== null & userNumber !== ''){
             userNumber = parseInt(userNumber);
-        } else if(userNumber === ''){
-            userNumber = userNumber;
-        } else{
+        }
+        // I due if sono separati poiché se usavo l'else, nel caso della stringa vuota avrei avuto il break 
+        if(userNumber === null){
             alert(`Hai annullato l'operazione`);
             break;
         }
