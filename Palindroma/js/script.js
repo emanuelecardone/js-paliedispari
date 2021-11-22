@@ -4,17 +4,30 @@
 
 
 // Chiedo all'utente la parola
-const userWord = prompt(`Inserisci una parola`);
-
-// Creo la variabile per registrare il risultato della funzione
-let answerForUser = wordIsPalindrome(userWord);
-
-// Do la risposta all'utente
-if(answerForUser){
-    alert(`${userWord} è palindroma`);
-} else{
-    alert(`${userWord} non è palindroma`);
+let userWord = '';
+while(userWord === '' || !isNaN(userWord)){
+    userWord = prompt(`Inserisci una parola`);
+    if(userWord === null){
+        alert(`Hai annullato l'operazione`);
+        break;
+    }
 }
+
+// Se l'utente non annulla, vado avanti
+if(!(userWord === null)){
+    // Creo la variabile per registrare il risultato della funzione
+    let answerForUser = wordIsPalindrome(userWord);
+
+    // Do la risposta all'utente
+    if(answerForUser){
+        alert(`${userWord} è palindroma`);
+    } else{
+        alert(`${userWord} non è palindroma`);
+    }
+}
+
+
+// FUNZIONI
 
 // Funzione per capire se una parola è palindroma
 //
