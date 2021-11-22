@@ -43,10 +43,10 @@ if(!(userChoice === null)){
         // A questo punto, tramite la funzione sumIsEvenOrOdd, stabilisco se la somma di due numeri è pari o dispari
         const gameResult = sumIsEvenOrOdd(userNumber, computerNumber);
 
-        // Se l'utente ha scelto pari e la somma è pari oppure se ha scelto dispari e la somma è dispari, vince l'utente 
+        // Se la scelta dell'utente corrisponde col risultato della funzione even or odd, vince l'utente
         // Altrimenti vince il computer
         let wonOrLost = `Hai perso!`;
-        if((userChoice === `pari` && gameResult === `pari`) || (userChoice === `dispari` && gameResult === `dispari`)){
+        if(userChoice === gameResult){
             wonOrLost = `Hai vinto!`;
         }
         // Output finale
