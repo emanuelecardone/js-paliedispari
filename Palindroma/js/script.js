@@ -48,7 +48,7 @@ if(!(userWord === null)){
 function wordIsPalindrome(word){
     let reversedWord;
     let answer;
-    for(i = word.length - 1; i >= 0; i--){
+    for(let i = word.length - 1; i >= 0; i--){
         if(i === word.length - 1){
             reversedWord = word[i];
         } else{
