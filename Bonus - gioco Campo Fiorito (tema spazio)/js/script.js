@@ -23,7 +23,7 @@ document.querySelector('main').innerHTML = `
 ` + `
     <div class="rules_wrapper w-50 h-50 justify-content-center align-items-center">
         <p class="text-center text-uppercase fw-bold my_blue_color rules_message fs-4 my_blue_borders p-5">
-            In this game, 8 astronauts over 100 will make you lose, so don't click them!<br>
+            In this game, 8 random astronauts over 100 will make you lose, so don't click them!<br>
             To win, you have to click all the 92 safe astronauts. Good luck!
         </p>
     </div>
