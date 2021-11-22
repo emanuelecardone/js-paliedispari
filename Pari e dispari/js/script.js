@@ -27,9 +27,7 @@ if(!(userChoice === null)){
         userNumber = prompt(`Scegli un numero da 1 a 5`);
         if(userNumber !== null & userNumber !== ''){
             userNumber = parseInt(userNumber);
-        }
-        // I due if sono separati poiché se usavo l'else, nel caso della stringa vuota avrei avuto il break 
-        if(userNumber === null){
+        } else if(userNumber === null){
             alert(`Hai annullato l'operazione`);
             break;
         }
