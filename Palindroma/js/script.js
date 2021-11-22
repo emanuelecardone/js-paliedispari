@@ -17,7 +17,7 @@ while(userWord === '' || !isNaN(userWord)){
 // Se l'utente non annulla, vado avanti
 if(!(userWord === null)){
     // Creo la variabile per registrare il risultato della funzione
-    let answerForUser = wordIsPalindrome(userWord);
+    const answerForUser = wordIsPalindrome(userWord);
 
     // Do la risposta all'utente
     if(answerForUser){
