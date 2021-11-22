@@ -1,0 +1,270 @@
+/* COMMON */
+
+
+/* Custom blue */
+.my_blue_borders{
+    border: 5px solid #0302f6;
+}
+.my_blue_bg{
+    background-color: #0302f6;
+}
+.my_blue_color{
+    color: #0302f6;      
+}
+
+/* Custom background */
+.stars_bg{
+    background-image: url(../img/2f99bfc0ac6d02db55e307d676168af2.gif);
+    background-position: center;
+    background-size: cover;
+}
+
+/* Custom styles */
+.btn,
+.fa-user-astronaut{
+    cursor: pointer;
+}
+.btn:focus{
+    box-shadow: none;
+}
+.row-cols-10 > .col{
+    flex: 0 0 auto;
+    width: 10%;
+}
+
+/* Win event */
+.win_event{
+    color: lime;
+    border-color: lime;
+    animation: you_won 1.5s linear 1;
+    opacity: 0;
+}
+
+
+/* HEADER */
+
+
+/* Common in header */
+header{
+    display: none;
+}
+header h1{
+    letter-spacing: 1rem;
+}
+
+
+/* MAIN */
+
+
+/* Common in main*/
+main{
+    margin-top: 100px;
+    height: calc(100vh - 200px);
+}
+main h2,
+.rules_wrapper p{
+    letter-spacing: .5rem;
+}
+
+/* Overlay per win/loss */
+.win_loss_overlay{
+    display: none;
+    background-color: rgba(0, 0, 0, .75);
+    gap: 5rem;
+}
+
+/* Display di default */
+.game_main_wrapper,
+.start_button,
+.rules_button,
+.rules_back_button,
+.rules_wrapper,
+.win_loss_overlay h2{
+    display: none;
+}
+.win_loss_overlay.game_over{
+    display: flex;
+    z-index: 2000;
+}
+
+/* Display active / clicked */
+.game_main_wrapper.active,
+.win_loss_overlay h2.active{
+    display: block;
+}
+.rules_wrapper.active{
+    display: flex;
+}
+.start_button.active,
+.rules_button.active,
+.rules_back_button.active{
+    display: inline-block;
+}
+
+/* Selettori specifici per i debug */
+/* Posizione astronauta selected */
+[class*="selected_astronaut_"]{
+    position: relative;
+}
+/* Animazione per gli astronauti safe tranne l'ultimo che fa vincere il gioco */
+[class*="normal_astronaut_"].clicked:not(.win_event){
+    color: lime;
+    border-color: lime;
+    animation: disappearing_astronaut .5s linear 1;
+    opacity: 0;
+    cursor: auto;
+}
+/* Debug per non far rifare l'animazione agli astronauti già clickati quando vado su Rules e torno */
+[class*="normal_astronaut_"].debug_astronaut.no_animation{
+    animation: none;
+}
+/* Animazione per gli astronauti deadly non clickati quando è game over */
+[class*="selected_astronaut_"].active:not(.clicked){
+    animation: remaining_red_astronauts 1s linear 1;
+    color: red;
+    border-color: red;
+}
+/* Animazione astronauta deadly clickato */
+[class*="selected_astronaut_"].clicked{
+    animation: wrong_choice 1s linear 1;
+    color: red;
+    border-color: red;
+    transform: scale(1.25);
+}
+
+
+/* FOOTER */
+
+
+/* Common in footer */
+footer{
+    display: none;
+}
+
+/* HOVER */
+
+
+.fa-user-astronaut:hover{
+    transform: scale(1.25);
+}
+.btn:hover{
+    color: #0302f6;
+}
+
+
+/* ANIMAZIONI */
+
+
+/* Animazione astronauta safe clickato */
+@keyframes disappearing_astronaut{
+    0%{
+        opacity: 1;
+        transform: scale(1.25);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.25);
+    }
+}
+/* Animazione astronauta deadly clickato */
+@keyframes wrong_choice{
+    5%{
+        transform: scale(1.25);
+        left: .2rem;
+    }
+    10%{
+        left: -.4rem;
+    }
+    15%{
+        left: .4rem;
+    }
+    20%{
+        left: -.4rem;
+    }
+    25%{
+        left: .4rem;
+    }
+    30%{
+        left: -.4rem;
+    }
+    35%{
+        left: .4rem;
+    }
+    40%{
+        left: -.4rem;
+    }
+    45%{
+        left: .4rem;
+    }
+    50%{
+        left: -.4rem;
+    }
+    55%{
+        left: .4rem;
+    }
+    60%{
+        left: -.4rem;
+    }
+    65%{
+        left: .4rem;
+    }
+    70%{
+        left: -.4rem;
+    }
+    75%{
+        left: .4rem;
+    }
+    80%{
+        left: -.4rem;
+    }
+    85%{
+        left: .4rem;
+    }
+    90%{
+        left: -.4rem;
+    }
+    95%{
+        left: .4rem;
+    }
+    100%{
+        transform: scale(1.25);
+        left: -.2rem;
+    }
+}
+/* Animazione astronauti deadly non clickati al game over */
+@keyframes remaining_red_astronauts{
+    0%{
+        color: #0302f6;
+        border-color: #0302f6;
+    }
+    100%{
+        color: red;
+        border-color: red;
+    }   
+}
+/* Animazione ultimo astronauta safe clickato e game won */
+@keyframes you_won{
+    0%{
+        opacity: 1;
+        transform: scale(1.25);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+
+/* MEDIA */
+
+
+@media screen and (min-height: 950px){
+    header,
+    footer{
+        display: flex;
+    }
+    main{
+        border-left: 5px solid #0302f6;
+        border-right: 5px solid #0302f6;
+    }
+}
