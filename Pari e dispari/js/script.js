@@ -45,23 +45,18 @@ if(!(userChoice === null)){
 
         // Se l'utente ha scelto pari e la somma è pari oppure se ha scelto dispari e la somma è dispari, vince l'utente 
         // Altrimenti vince il computer
+        let wonOrLost = `Hai perso!`;
         if((userChoice === `pari` && gameResult === `pari`) || (userChoice === `dispari` && gameResult === `dispari`)){
-            alert(`
-            Numero tuo: ${userNumber}
-            Numero computer: ${computerNumber}
-            Somma: ${userNumber + computerNumber}
-            La somma è ${gameResult} e hai scelto ${userChoice}
-            Hai vinto!
-            `);
-        } else{
-            alert(`
-            Numero tuo: ${userNumber}
-            Numero computer: ${computerNumber}
-            Somma: ${userNumber + computerNumber}
-            La somma è ${gameResult} e hai scelto ${userChoice}
-            Hai perso!
-            `);
+            wonOrLost = `Hai vinto!`;
         }
+        // Output finale
+        alert(`
+            Numero tuo: ${userNumber}
+            Numero computer: ${computerNumber}
+            Somma: ${userNumber + computerNumber}
+            La somma è ${gameResult} e hai scelto ${userChoice}
+            ${wonOrLost}
+        `);
     }
 }
 
