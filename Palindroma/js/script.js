@@ -7,7 +7,7 @@
 // Aggiungo il toLowerCase per evitare errori
 let userWord = '';
 while(userWord === '' || !isNaN(userWord)){
-    userWord = prompt(`Inserisci una parola`)
+    userWord = prompt(`Inserisci una parola`);
     if(userWord !== null){
         userWord = userWord.toLowerCase();
     } else{
