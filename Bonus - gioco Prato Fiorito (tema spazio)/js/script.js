@@ -149,7 +149,9 @@ startButton.addEventListener('click', function(){
                 document.querySelector(`.selected_astronaut_${i}`).classList.add('clicked');
                 // Animazione per i rimanenti selected astronauts
                 for(let counter = 0; counter < selectedNumbers.length; counter++){
-                    document.querySelector(`.selected_astronaut_${counter}`).classList.add('active');        
+                    if(counter !== i){
+                        document.querySelector(`.selected_astronaut_${counter}`).classList.add('active');
+                    }        
                 }
                 // Animazione per scritta game over (ritardo di 1.5s)
                 setTimeout(function(){document.querySelector('.win_loss_overlay').classList.add('game_over')}, 1500);
